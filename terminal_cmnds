@@ -1,0 +1,3 @@
+ansible --private-key ~/.ssh/Mika.pem ec2 -m ping
+aws cloudformation create-stack \--capabilities CAPABILITY_IAM \--stack-name ansible --template-body file://helloworld-cf-template-v2 --parameters ParameterKey=KeyPair,ParameterValue=Mika
+ansible --private-key ~/.ssh/Mika.pem '174.129.46.*' -a 'df -h'
